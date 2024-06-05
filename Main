@@ -1,0 +1,42 @@
+finaluserInput = True
+while(finaluserInput == True):
+    print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+    print("")
+    userInput = input("Please enter your first and last name: ")
+    print("Geoffrey Hubona's Assignment 4 Modified Future Value Application")
+    print("")
+    userInput2 = float(input("Please enter quarterly investment (greater than $0 but not to exceed $500: "))
+    while(userInput2 <= 0 or userInput2 > 500):
+        print("Quarterly investment must be greater than $0 and less than or equal to $500. Please try again.")
+        print("")
+        userInput2 = float(input("Please enter quarterly investment (greater than $0 but not to exceed $500: "))
+    print("")
+    userInput3 = float(input("Enter yearly interest rate (greater than 0% but not exceed 16%): "))
+    while(userInput3 <= 0 or userInput3 > 16):
+        print("Yearly investment must be greater than $0 and less than or equal to $500. Please try again.")
+        print("")
+        userInput3 = float(input("Enter yearly interest rate (greater than 0% but not exceed 16%): "))
+    print("")
+    userInput4 = int(input("Enter number of years (greater than 0 but not to exceed 10): "))
+    while (userInput4 <= 0 or userInput4 > 10):
+        print("Number of years must be greater than $0 and less than or equal to $500. Please try again.")
+        print("")
+        userInput4 = int(input("Enter number of years (greater than 0 but not to exceed 10): "))
+    print("")
+    monthly_interest = 0
+    monthly_interest = userInput3 / 1200
+    num = 0
+    future_value = 0
+    for i in range(userInput4):
+        for j in range(4):
+            num = num + 1
+            future_value += userInput2
+            amount = future_value * monthly_interest
+            future_value += amount
+            print("End of Quarter = " + str(num) + "                  Future Value = " + str(round(future_value, 2)))
+
+    question = input("would you like to continue? (yes or no) ")
+    if(question == "no"):
+        finaluserInput = False
+print("Goodbye " + userInput)
+print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
